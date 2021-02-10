@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "EnvMonBT"
-Date "2020-10-11"
-Rev "2.0"
+Date "2021-01-14"
+Rev "2.1"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -178,10 +178,7 @@ $EndComp
 Wire Wire Line
 	4900 2250 4600 2250
 Wire Wire Line
-	4900 2650 4600 2650
-Wire Wire Line
-	4600 2650 4600 2250
-Connection ~ 4600 2250
+	4500 2650 4500 2250
 $Comp
 L power:GND #PWR011
 U 1 1 5EEFBEDC
@@ -429,8 +426,6 @@ NoConn ~ 5550 3300
 NoConn ~ 5750 3300
 NoConn ~ 5850 3300
 NoConn ~ 6300 2850
-NoConn ~ 4900 2450
-NoConn ~ 4900 2350
 Text GLabel 8100 2750 0    50   Input ~ 0
 SWDIO
 $Comp
@@ -696,4 +691,97 @@ F 3 "~" H 5300 5950 50  0001 C CNN
 	1    5300 5950
 	-1   0    0    1   
 $EndComp
+$Comp
+L Device:Crystal_GND24_Small X1
+U 1 1 6000954A
+P 3750 1100
+F 0 "X1" H 3800 1300 50  0000 L CNN
+F 1 "12MHz" H 3800 1200 50  0000 L CNN
+F 2 "EnvMon:Crystal_SMD_3225-4Pin_3.2x2.5mm_HandSoldering" H 3750 1100 50  0001 C CNN
+F 3 "~" H 3750 1100 50  0001 C CNN
+	1    3750 1100
+	1    0    0    -1  
+$EndComp
+Text GLabel 4900 2350 0    50   Input ~ 0
+OSC_IN
+Text GLabel 4900 2450 0    50   Input ~ 0
+OSC_OUT
+Wire Wire Line
+	4600 2250 4500 2250
+Connection ~ 4600 2250
+Wire Wire Line
+	4500 2650 4900 2650
+Text GLabel 3450 1100 0    50   Input ~ 0
+OSC_IN
+Text GLabel 4050 1100 2    50   Input ~ 0
+OSC_OUT
+$Comp
+L power:GND #PWR018
+U 1 1 60012320
+P 3750 1350
+F 0 "#PWR018" H 3750 1100 50  0001 C CNN
+F 1 "GND" H 3750 1200 50  0000 C CNN
+F 2 "" H 3750 1350 50  0001 C CNN
+F 3 "" H 3750 1350 50  0001 C CNN
+	1    3750 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C4
+U 1 1 60015B42
+P 3550 1250
+F 0 "C4" H 3350 1300 50  0000 L CNN
+F 1 "10pF" H 3250 1200 50  0000 L CNN
+F 2 "EnvMon:C_0402_1005Metric" H 3550 1250 50  0001 C CNN
+F 3 "~" H 3550 1250 50  0001 C CNN
+	1    3550 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C5
+U 1 1 60017276
+P 3950 1250
+F 0 "C5" H 4050 1300 50  0000 L CNN
+F 1 "10pF" H 4050 1200 50  0000 L CNN
+F 2 "EnvMon:C_0402_1005Metric" H 3950 1250 50  0001 C CNN
+F 3 "~" H 3950 1250 50  0001 C CNN
+	1    3950 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 1100 3650 1100
+Connection ~ 3550 1100
+Wire Wire Line
+	3550 1100 3550 1150
+Wire Wire Line
+	3550 1100 3450 1100
+Wire Wire Line
+	3850 1100 3950 1100
+Wire Wire Line
+	3950 1100 3950 1150
+Connection ~ 3950 1100
+Wire Wire Line
+	3950 1100 4050 1100
+Wire Wire Line
+	3950 1350 3750 1350
+Wire Wire Line
+	3750 1350 3550 1350
+Connection ~ 3750 1350
+$Comp
+L power:GND #PWR017
+U 1 1 6002D116
+P 3550 850
+F 0 "#PWR017" H 3550 600 50  0001 C CNN
+F 1 "GND" H 3550 700 50  0000 C CNN
+F 2 "" H 3550 850 50  0001 C CNN
+F 3 "" H 3550 850 50  0001 C CNN
+	1    3550 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 850  3750 850 
+Wire Wire Line
+	3750 850  3750 1000
+Wire Wire Line
+	3750 1200 3750 1350
 $EndSCHEMATC
