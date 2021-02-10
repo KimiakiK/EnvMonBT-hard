@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 1208)
+    (start_pass_no 2019)
     (layer_rule F.Cu
       (active on)
       (preferred_direction vertical)
@@ -31,26 +31,32 @@
     (clear 127.0 (type smd_to_turn_gap))
     (clear 50.8 (type smd_smd))
   )
-  (padstack "Via[0-1]_508:254_um"
+  (padstack "Via[0-1]_609.6:304.8_um"
     (shape
-      (circle F.Cu 508.0 0.0 0.0)
+      (circle F.Cu 609.6 0.0 0.0)
     )
     (shape
-      (circle B.Cu 508.0 0.0 0.0)
+      (circle B.Cu 609.6 0.0 0.0)
     )
     (attach off)
   )
   (via 
-    "Via[0-1]_508:254_um" "Via[0-1]_508:254_um" default
+    "Via[0-1]_609.6:304.8_um" "Via[0-1]_609.6:304.8_um" default
   )
   (via 
-    "Via[0-1]_508:254_um-kicad_default" "Via[0-1]_508:254_um" "kicad_default"
+    "Via[0-1]_609.6:304.8_um-kicad_default" "Via[0-1]_609.6:304.8_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_609.6:304.8_um-Power" "Via[0-1]_609.6:304.8_um" Power
   )
   (via_rule
-    default "Via[0-1]_508:254_um"
+    default "Via[0-1]_609.6:304.8_um"
   )
   (via_rule
-    "kicad_default" "Via[0-1]_508:254_um-kicad_default"
+    "kicad_default" "Via[0-1]_609.6:304.8_um-kicad_default"
+  )
+  (via_rule
+    Power "Via[0-1]_609.6:304.8_um-Power"
   )
   (class default
     (clearance_class default)
@@ -63,11 +69,22 @@
     )
   )
   (class "kicad_default"
-    +5V GND +3V3 "TFT_BLK" "TFT_DC" "TFT_RES" "SPI1_MOSI" "SPI1_SCK"
-    "I2C1_SCL" "I2C1_SDA" "USART1_TX" "USART1_RX" SWDIO SWCLK NRST TDI
-    SWO TRST "Net-(R1-Pad1)" "DISP_SW"
+    "TFT_BLK" "TFT_DC" "TFT_RES" "SPI1_MOSI" "SPI1_SCK" "I2C1_SCL" "I2C1_SDA" "USART1_TX"
+    "USART1_RX" SWDIO SWCLK NRST TDI SWO TRST "Net-(R1-Pad1)"
+    "DISP_SW" "Net-(D1-Pad2)" "Net-(R2-Pad1)" "Net-(R3-Pad2)" "Net-(R4-Pad2)" "RN4020_WAKE" "USART2_RX" "USART2_TX"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
+    (rule
+      (width 254.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class Power
+    +5V GND +3V3
+    (clearance_class Power)
+    (via_rule Power)
     (rule
       (width 254.0)
     )
