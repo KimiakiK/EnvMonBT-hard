@@ -16,6 +16,9 @@
 
 # Photos
 ![EnvMonBT](https://github.com/KimiakiK/EnvMonBT-hard/blob/images/EnvMon.jpg)
+![EnvMonBT_BLE](https://github.com/KimiakiK/EnvMonBT-hard/blob/images/EnvMonBT_BLE.jpg)
+![EnvMonBT_EnvData](https://github.com/KimiakiK/EnvMonBT-hard/blob/images/EnvMonBT_EnvData.jpg)
+
 
 ## PCB
 - V2.1
